@@ -1,0 +1,11 @@
+# Configuration locale de Claude Code (chemins machine, non destinée au dépôt public)
+.claude/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Captures/exports temporaires éventuels
+*.tmp
+preview-*.png
