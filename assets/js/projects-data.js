@@ -227,7 +227,10 @@
                 '    }\n' +
                 '}</code></pre>',
                 '<p><strong>Compétences mobilisées :</strong> travailler en mode projet (équipe, répartition des ',
-                'tâches), mise à disposition d\'un service informatique.</p>'
+                'tâches), mise à disposition d\'un service informatique.</p>',
+                '<p><a href="https://github.com/HaGotHem/CRM-Club-Volley" target="_blank" rel="noopener noreferrer">',
+                '<i class="fab fa-github" aria-hidden="true"></i> Voir le dépôt de l\'équipe sur GitHub</a> ',
+                '<span style="opacity:.7;">(compte de mon coéquipier, dépôt partagé)</span></p>'
             ].join('\n')
         },
 
@@ -257,7 +260,9 @@
                 '<p><strong>Compétences mobilisées :</strong> développer la présence en ligne de l\'organisation ',
                 '(refonte d\'un site exploitant les données de l\'organisation), travailler en mode projet ',
                 '(planning en 3 jours : analyse, développement, interactivité), mise à disposition d\'un service ',
-                'informatique.</p>'
+                'informatique.</p>',
+                '<p><a href="https://github.com/mehdiseg/techshop" target="_blank" rel="noopener noreferrer">',
+                '<i class="fab fa-github" aria-hidden="true"></i> Voir le code sur GitHub</a></p>'
             ].join('\n')
         },
 
@@ -276,7 +281,9 @@
                 'cours / livré), barre de progression, et export/import des données au format JSON.',
                 '</p>',
                 '<p><strong>Compétences mobilisées :</strong> mise à disposition d\'un service informatique ',
-                '(outil fonctionnel et déployé).</p>'
+                '(outil fonctionnel et déployé).</p>',
+                '<p><a href="https://github.com/mehdiseg/santas-workshop" target="_blank" rel="noopener noreferrer">',
+                '<i class="fab fa-github" aria-hidden="true"></i> Voir le code sur GitHub</a></p>'
             ].join('\n')
         }
     };
