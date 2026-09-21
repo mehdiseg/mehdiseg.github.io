@@ -62,7 +62,9 @@
                 'Switch(config-if)# switchport mode trunk\n' +
                 'Switch(config-if)# switchport trunk allowed vlan 10,20</code></pre>',
                 '<p><strong>Compétences mobilisées :</strong> gestion du patrimoine informatique (continuité et ',
-                'sécurité du service), mise à disposition d\'un service informatique.</p>'
+                'sécurité du service), mise à disposition d\'un service informatique.</p>',
+                '<p><a href="https://github.com/mehdiseg/labs-reseau-cisco" target="_blank" rel="noopener noreferrer">',
+                '<i class="fab fa-github" aria-hidden="true"></i> Voir les TP Cisco sur GitHub (labs-reseau-cisco)</a></p>'
             ].join('\n')
         },
 
@@ -153,7 +155,9 @@
                 'sudo ufw enable\n' +
                 'sudo ufw status verbose</code></pre>',
                 '<p><strong>Compétences mobilisées :</strong> gestion du patrimoine informatique (respect des ',
-                'règles de sécurité), mise à disposition d\'un service informatique.</p>'
+                'règles de sécurité), mise à disposition d\'un service informatique.</p>',
+                '<p><a href="https://github.com/mehdiseg/serveur-debian-lemp-securise" target="_blank" rel="noopener noreferrer">',
+                '<i class="fab fa-github" aria-hidden="true"></i> Voir la documentation sur GitHub (serveur-debian-lemp-securise)</a></p>'
             ].join('\n')
         },
 
@@ -284,6 +288,113 @@
                 '(outil fonctionnel et déployé).</p>',
                 '<p><a href="https://github.com/mehdiseg/santas-workshop" target="_blank" rel="noopener noreferrer">',
                 '<i class="fab fa-github" aria-hidden="true"></i> Voir le code sur GitHub</a></p>'
+            ].join('\n')
+        },
+
+        scanner: {
+            badge: 'Projet personnel — testé',
+            title: 'Scanner réseau en PowerShell',
+            context: 'Outil d\'audit du réseau local — septembre 2026',
+            tags: ['PowerShell', 'Réseau', 'ARP / ICMP', 'Ports TCP', 'Sécurité'],
+            images: [],
+            bodyHtml: [
+                '<p>',
+                'Module PowerShell sans dépendance qui <strong>recense les appareils d\'un réseau local</strong> : ',
+                'découverte par ping en parallèle complétée par la table ARP (pour retrouver aussi les appareils qui ',
+                'ne répondent pas au ping), adresse MAC, nom d\'hôte, test de ports TCP courants ou choisis, puis ',
+                'rapport HTML et CSV.',
+                '</p>',
+                '<h4><i class="fas fa-layer-group" aria-hidden="true"></i> Points de conception</h4>',
+                '<ul>',
+                '<li><strong>Garde-fous :</strong> les adresses publiques et les réseaux de plus de 1024 adresses sont ',
+                'refusés par défaut (options explicites pour les autoriser).</li>',
+                '<li><strong>Remarques de sécurité :</strong> Telnet et FTP (non chiffrés), SMB, RDP et VNC signalés.</li>',
+                '<li><strong>Tests :</strong> 36 vérifications automatiques (analyse des ports et plages, calcul des ',
+                'adresses, refus des réseaux dangereux).</li>',
+                '</ul>',
+                '<p class="project-modal-code-label">PowerShell — exemples</p>',
+                '<pre><code>.\\Scan-Reseau.ps1\n' +
+                '.\\Scan-Reseau.ps1 -Reseau 192.168.1.0/24 -Ports 22,80,443,8000-8010 -Sortie .\\rapports\n' +
+                '.\\Scan-Reseau.ps1 -Reseau 192.168.1.0/24 -SansPorts</code></pre>',
+                '<p><strong>Compétences mobilisées :</strong> gestion du patrimoine informatique (recensement des ',
+                'équipements), assurer la cybersécurité (repérage des services exposés), scripting.</p>',
+                '<p><a href="https://github.com/mehdiseg/scanner-reseau-powershell" target="_blank" rel="noopener noreferrer">',
+                '<i class="fab fa-github" aria-hidden="true"></i> Voir le code sur GitHub</a></p>'
+            ].join('\n')
+        },
+
+        catalogue: {
+            badge: 'Projet personnel — magasin Noha Auto',
+            title: 'Application de catalogue et de stock — Noha Auto',
+            context: 'Serveur web multi-utilisateurs — septembre 2026',
+            tags: ['Node.js', 'Express', 'SQLite', 'HTTPS', 'Tailscale Funnel', 'Codes-barres'],
+            images: [
+                { src: IMG + 'noha-catalogue-mobile.png', caption: 'Catalogue sur téléphone (données de démonstration)' },
+                { src: IMG + 'noha-catalogue-ordinateur.png', caption: 'Catalogue sur ordinateur (données de démonstration)' }
+            ],
+            bodyHtml: [
+                '<p>',
+                'Application web pour gérer le catalogue d\'articles d\'un magasin de pièces auto : recherche, ajout à la ',
+                'main ou <strong>import Excel</strong>, stock avec alerte « à commander » (seuil réglable par article), ',
+                'et <strong>étiquettes à codes-barres</strong> pour une douchette USB.',
+                '</p>',
+                '<div class="project-modal-note">',
+                'Projet conçu à partir des besoins du magasin, <strong>avec l\'aide de l\'assistant IA Claude</strong> ',
+                'pour l\'écriture du code. Il fonctionne sur mon PC, joignable par HTTPS ; l\'installation définitive ',
+                'et le démarrage automatique du serveur sont en cours de validation.',
+                '</div>',
+                '<h4><i class="fas fa-shield-alt" aria-hidden="true"></i> Sécurité (le serveur est joignable depuis internet)</h4>',
+                '<ul>',
+                '<li>Comptes avec identifiant et mot de passe (hachage scrypt), rôles administrateur et employé : ',
+                'l\'employé ne voit pas les prix d\'achat, y compris dans les réponses du serveur.</li>',
+                '<li>Sessions par cookie <code>HttpOnly</code>/<code>Secure</code>, protection CSRF, en-têtes de sécurité ',
+                '(CSP stricte), blocage temporaire après 8 échecs de connexion.</li>',
+                '<li>Le serveur n\'écoute qu\'en local (<code>127.0.0.1</code>) ; c\'est <strong>Tailscale Funnel</strong> qui ',
+                'le publie en HTTPS, sans redirection de port sur la box.</li>',
+                '<li>Journal d\'activité, sauvegardes quotidiennes de la base, 10 scénarios de test de bout en bout.</li>',
+                '</ul>',
+                '<p><strong>Compétences mobilisées :</strong> mise à disposition d\'un service informatique, gestion du ',
+                'patrimoine informatique (catalogue, stock), assurer la cybersécurité d\'un service.</p>',
+                '<p>Le dépôt GitHub est <strong>privé</strong> (il décrit le fonctionnement interne d\'un serveur exposé) : ',
+                'le code peut être présenté sur demande. Le retour d\'expérience sur la publication en HTTPS est public : ',
+                '<a href="https://github.com/mehdiseg/tailscale-funnel-serveur-maison" target="_blank" rel="noopener noreferrer">',
+                '<i class="fab fa-github" aria-hidden="true"></i> tailscale-funnel-serveur-maison</a>.</p>'
+            ].join('\n')
+        },
+
+        outils: {
+            badge: 'Projets personnels — testés',
+            title: 'Boîte à outils réseau (Python, Bash)',
+            context: 'Cinq petits outils publics, avec tests automatiques — septembre 2026',
+            tags: ['Python', 'Bash', 'Wireshark', 'WireGuard', 'OpenSSL', 'Nmap'],
+            images: [],
+            bodyHtml: [
+                '<p>',
+                'Des outils pour s\'entraîner et travailler proprement. Chacun a des tests, exécutés aussi à chaque ',
+                '<code>push</code> par GitHub Actions.',
+                '</p>',
+                '<ul>',
+                '<li><a href="https://github.com/mehdiseg/calculateur-sous-reseaux" target="_blank" rel="noopener noreferrer">',
+                'calculateur-sous-reseaux</a> : informations d\'un réseau, découpage et <strong>VLSM</strong> (14 tests).</li>',
+                '<li><a href="https://github.com/mehdiseg/tp-wireshark-analyse-trafic" target="_blank" rel="noopener noreferrer">',
+                'tp-wireshark-analyse-trafic</a> : capture synthétique et 18 exercices de filtres, chaque réponse vérifiée avec ',
+                '<code>tshark</code>.</li>',
+                '<li><a href="https://github.com/mehdiseg/wireguard-generateur-config" target="_blank" rel="noopener noreferrer">',
+                'wireguard-generateur-config</a> : configuration <strong>WireGuard</strong> serveur + clients, clés vérifiées avec ',
+                '<code>wg</code> (16 tests).</li>',
+                '<li><a href="https://github.com/mehdiseg/pki-interne-openssl" target="_blank" rel="noopener noreferrer">',
+                'pki-interne-openssl</a> : autorité de certification interne et certificats avec SAN, testée jusqu\'à une vraie ',
+                'connexion TLS.</li>',
+                '<li><a href="https://github.com/mehdiseg/nmap-audit-reseau-local" target="_blank" rel="noopener noreferrer">',
+                'nmap-audit-reseau-local</a> : mémo <strong>Nmap</strong> et outil de comparaison de scans (16 tests).</li>',
+                '</ul>',
+                '<p>',
+                'D\'autres guides (labs Cisco, pfSense, Zabbix, Suricata...) sont préparés mais <strong>pas encore réalisés</strong> : ',
+                'ils sont listés, avec leur statut, dans la ',
+                '<a href="https://github.com/mehdiseg/roadmap-reseau-bts-sio" target="_blank" rel="noopener noreferrer">feuille de route</a>.',
+                '</p>',
+                '<p><strong>Compétences mobilisées :</strong> assurer la cybersécurité, gestion du patrimoine informatique, ',
+                'scripting et tests automatisés.</p>'
             ].join('\n')
         }
     };

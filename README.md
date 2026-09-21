@@ -18,6 +18,9 @@ scripting, support utilisateurs), projets réalisés, aperçu de la veille techn
 - **Santa's Workshop**, outil de suivi de production de cadeaux (JS, localStorage)
 - **Sécurisation Pare-feu / VPN**, home-lab personnel sous Debian (UFW, Nginx, MariaDB)
 - **Gestion de Parc (GLPI)**, **Déploiement Active Directory**, **Segmentation Réseau (VLAN)**
+- **Catalogue et stock — Noha Auto**, application web multi-utilisateurs (Node.js, SQLite, HTTPS via Tailscale Funnel)
+- **Scanner réseau en PowerShell**, **Boîte à outils réseau** (calculateur VLSM, TP Wireshark, générateur WireGuard,
+  PKI interne OpenSSL, outil Nmap) : projets publics avec tests automatiques
 
 **Tableau de synthèse des réalisations professionnelles** — document officiel BTS SIO (annexe VI-1),
 téléchargeable en PDF depuis la page d'accueil.
